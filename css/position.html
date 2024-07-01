@@ -1,0 +1,127 @@
+<!--
+
+Explicação do CSS Position
+1. position: static
+Este é o valor padrão. Os elementos são posicionados de acordo com o fluxo normal do documento. As propriedades top, right, bottom e left não têm efeito quando position é static.
+
+2. position: relative
+O elemento é posicionado em relação à sua posição original no documento. As propriedades top, right, bottom e left deslocam o elemento a partir dessa posição original.
+
+3. position: absolute
+O elemento é posicionado em relação ao contêiner pai mais próximo que tenha uma posição relative, absolute ou fixed. Se não houver tal contêiner, será posicionado em relação ao elemento <html>. As propriedades top, right, bottom e left especificam a posição do elemento.
+
+4. position: fixed
+O elemento é posicionado em relação à janela de visualização (viewport). Isso significa que ele permanece fixo no mesmo lugar na tela, mesmo quando a página é rolada. As propriedades top, right, bottom e left especificam a posição do elemento.
+
+5. position: sticky
+O elemento é posicionado de acordo com o valor de rolagem do usuário. Ele é tratado como relative até atingir um ponto definido pelas propriedades top, right, bottom ou left, momento em que passa a se comportar como fixed.
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio CSS Position</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        section {
+            margin: 20px;
+        }
+        .container {
+            position: relative;
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #fff;
+            height: 200px;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            color: #fff;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        .box1 { background-color: #FF5733; }
+        .box2 { background-color: #33FF57; }
+        .box3 { background-color: #3357FF; }
+        .box4 { background-color: #FF33A1; }
+        .box5 { background-color: #33FFF5; }
+        .box6 { background-color: #F5FF33; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Conceitos de CSS Position</h1>
+        <p>Exemplos demonstrando diferentes propriedades de posicionamento usando CSS</p>
+    </header>
+
+    <section>
+        <h2>Position: Static</h2>
+        <div class="container">
+            <div class="box box1">Static</div>
+            <div class="box box2">Static</div>
+            <div class="box box3">Static</div>
+        </div>
+        <p><strong>position: static;</strong> (padrão, segue o fluxo normal do documento)</p>
+    </section>
+
+    <section>
+        <h2>Position: Relative</h2>
+        <div class="container">
+            <div class="box box1" style="position: relative; top: 10px; left: 10px;">Relative</div>
+            <div class="box box2" style="position: relative; top: 20px; left: 20px;">Relative</div>
+            <div class="box box3" style="position: relative; top: 30px; left: 30px;">Relative</div>
+        </div>
+        <p><strong>position: relative;</strong> (posicionado em relação à sua posição original)</p>
+    </section>
+
+    <section>
+        <h2>Position: Absolute</h2>
+        <div class="container">
+            <div class="box box1" style="position: absolute; top: 10px; left: 10px;">Absolute</div>
+            <div class="box box2" style="position: absolute; top: 10px; right: 10px;">Absolute</div>
+            <div class="box box3" style="position: absolute; bottom: 10px; left: 10px;">Absolute</div>
+            <div class="box box4" style="position: absolute; bottom: 10px; right: 10px;">Absolute</div>
+        </div>
+        <p><strong>position: absolute;</strong> (posicionado em relação ao contêiner pai mais próximo com posição relativa, absoluta ou fixa)</p>
+    </section>
+
+    <section>
+        <h2>Position: Fixed</h2>
+        <div class="container" style="height: 400px;">
+            <div class="box box1" style="position: fixed; top: 10px; left: 10px;">Fixed</div>
+            <div class="box box2" style="position: fixed; top: 10px; right: 10px;">Fixed</div>
+        </div>
+        <p><strong>position: fixed;</strong> (posicionado em relação à janela de visualização, permanece fixo ao rolar a página)</p>
+    </section>
+
+    <section>
+        <h2>Position: Sticky</h2>
+        <div class="container" style="height: 400px;">
+            <div class="box box1" style="position: sticky; top: 0;">Sticky</div>
+            <div class="box box2" style="margin-top: 150px;">Conteúdo para rolar</div>
+            <div class="box box3" style="margin-top: 150px;">Mais conteúdo</div>
+        </div>
+        <p><strong>position: sticky;</strong> (posicionado com base na posição de rolagem do usuário, "fixo" quando atinge um determinado ponto)</p>
+    </section>
+</body>
+</html>

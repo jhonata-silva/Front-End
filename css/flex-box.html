@@ -1,0 +1,211 @@
+<!--
+
+Conceitos Principais
+1. Flex Container
+O elemento pai que utiliza o Flexbox é chamado de "flex container". Para definir um contêiner flexível, você usa a propriedade display: flex ou display: inline-flex.
+
+2. Flex Items
+Os elementos filhos diretos de um contêiner flex são chamados de "flex items". Esses itens se comportam de acordo com as regras do Flexbox.
+
+Propriedades do Flex Container
+
+1. flex-direction
+Define a direção principal do layout dos itens dentro do contêiner.
+
+row (padrão): itens dispostos na horizontal, da esquerda para a direita.
+row-reverse: itens dispostos na horizontal, da direita para a esquerda.
+column: itens dispostos na vertical, de cima para baixo.
+column-reverse: itens dispostos na vertical, de baixo para cima.
+
+2. flex-wrap
+Define se os itens devem quebrar ou não a linha.
+
+nowrap (padrão): todos os itens ficam em uma única linha.
+wrap: itens quebram em várias linhas, de cima para baixo.
+wrap-reverse: itens quebram em várias linhas, de baixo para cima.
+
+3. justify-content
+Alinha os itens ao longo do eixo principal.
+
+flex-start (padrão): itens alinhados ao início do contêiner.
+flex-end: itens alinhados ao final do contêiner.
+center: itens centralizados.
+space-between: espaço igual entre os itens, com o primeiro item alinhado ao início e o último ao final.
+space-around: espaço igual ao redor de cada item.
+space-evenly: espaço igual entre todos os itens, incluindo as bordas do contêiner.
+
+4. align-items
+Alinha os itens ao longo do eixo transversal (perpendicular ao eixo principal).
+
+stretch (padrão): itens esticam para preencher o contêiner.
+flex-start: itens alinhados ao início do contêiner.
+flex-end: itens alinhados ao final do contêiner.
+center: itens centralizados.
+baseline: itens alinhados na linha de base do conteúdo.
+
+5. align-content
+Alinha as linhas do contêiner flexível quando há espaço extra no eixo transversal. Funciona apenas se houver múltiplas linhas (flex-wrap: wrap).
+
+flex-start: linhas alinhadas ao início do contêiner.
+flex-end: linhas alinhadas ao final do contêiner.
+center: linhas centralizadas.
+space-between: espaço igual entre as linhas.
+space-around: espaço igual ao redor das linhas.
+stretch (padrão): linhas esticam para preencher o contêiner.
+
+Propriedades do Flex Item
+1. order
+Define a ordem dos itens. O valor padrão é 0, mas pode ser alterado para qualquer número positivo ou negativo. Itens com menor valor de ordem aparecem primeiro.
+
+2. flex-grow
+Define a capacidade de um item de crescer em relação aos outros itens. O valor padrão é 0, significando que o item não crescerá além do tamanho definido. Um valor maior faz com que o item cresça mais.
+
+3. flex-shrink
+Define a capacidade de um item de encolher em relação aos outros itens. O valor padrão é 1, permitindo que o item encolha se necessário. Um valor 0 impede que o item encolha.
+
+4. flex-basis
+Define o tamanho inicial de um item antes de o espaço disponível ser distribuído. Pode ser um valor fixo (px, %, em, etc.) ou auto.
+
+5. align-self
+Permite que um único item tenha um alinhamento diferente dos outros itens ao longo do eixo transversal. Valores possíveis são os mesmos de align-items.
+
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio Flexbox</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        section {
+            margin: 20px;
+        }
+        .container {
+            display: flex;
+            margin: 20px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            color: #fff;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        .box1 { background-color: #FF5733; }
+        .box2 { background-color: #33FF57; }
+        .box3 { background-color: #3357FF; }
+        .flex-start { justify-content: flex-start; }
+        .flex-end { justify-content: flex-end; }
+        .center { justify-content: center; }
+        .space-between { justify-content: space-between; }
+        .space-around { justify-content: space-around; }
+        .space-evenly { justify-content: space-evenly; }
+        .align-start { align-items: flex-start; }
+        .align-end { align-items: flex-end; }
+        .align-center { align-items: center; }
+        .align-stretch { align-items: stretch; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Conceitos de Flexbox</h1>
+        <p>Exemplos demonstrando diferentes alinhamentos usando Flexbox</p>
+    </header>
+
+    <section>
+        <h2>Justify Content</h2>
+        <div class="container flex-start">
+            <div class="box box1">1</div>
+            <div class="box box2">2</div>
+            <div class="box box3">3</div>
+        </div>
+        <p><strong>justify-content: flex-start;</strong></p>
+
+        <div class="container flex-end">
+            <div class="box box1">1</div>
+            <div class="box box2">2</div>
+            <div class="box box3">3</div>
+        </div>
+        <p><strong>justify-content: flex-end;</strong></p>
+
+        <div class="container center">
+            <div class="box box1">1</div>
+            <div class="box box2">2</div>
+            <div class="box box3">3</div>
+        </div>
+        <p><strong>justify-content: center;</strong></p>
+
+        <div class="container space-between">
+            <div class="box box1">1</div>
+            <div class="box box2">2</div>
+            <div class="box box3">3</div>
+        </div>
+        <p><strong>justify-content: space-between;</strong></p>
+
+        <div class="container space-around">
+            <div class="box box1">1</div>
+            <div class="box box2">2</div>
+            <div class="box box3">3</div>
+        </div>
+        <p><strong>justify-content: space-around;</strong></p>
+
+        <div class="container space-evenly">
+            <div class="box box1">1</div>
+            <div class="box box2">2</div>
+            <div class="box box3">3</div>
+        </div>
+        <p><strong>justify-content: space-evenly;</strong></p>
+    </section>
+
+    <section>
+        <h2>Align Items</h2>
+        <div class="container align-start" style="height: 200px;">
+            <div class="box box1">1</div>
+            <div class="box box2">2</div>
+            <div class="box box3">3</div>
+        </div>
+        <p><strong>align-items: flex-start;</strong></p>
+
+        <div class="container align-end" style="height: 200px;">
+            <div class="box box1">1</div>
+            <div class="box box2">2</div>
+            <div class="box box3">3</div>
+        </div>
+        <p><strong>align-items: flex-end;</strong></p>
+
+        <div class="container align-center" style="height: 200px;">
+            <div class="box box1">1</div>
+            <div class="box box2">2</div>
+            <div class="box box3">3</div>
+        </div>
+        <p><strong>align-items: center;</strong></p>
+
+        <div class="container align-stretch" style="height: 200px;">
+            <div class="box box1">1</div>
+            <div class="box box2">2</div>
+            <div class="box box3">3</div>
+        </div>
+        <p><strong>align-items: stretch;</strong></p>
+    </section>
+</body>
+</html>

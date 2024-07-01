@@ -1,0 +1,212 @@
+<!--
+
+Explicação das Animações CSS
+1. Hover Animation
+Utiliza a propriedade transition para animar mudanças nas propriedades CSS quando o usuário passa o mouse sobre o elemento (hover).
+
+css
+Copiar código
+.box:hover {
+    transform: scale(1.2);
+    background-color: #000;
+}
+
+2. Fade-in Animation
+Usa a propriedade animation junto com a regra @keyframes para animar a opacidade do elemento, criando um efeito de "fade in".
+
+css
+Copiar código
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+3. Slide-in Animation
+Anima a posição de um elemento de fora da tela para dentro dela, criando um efeito de "slide in".
+
+css
+Copiar código
+.slide-in {
+    transform: translateX(-100%);
+    animation: slideIn 2s forwards;
+}
+
+@keyframes slideIn {
+    to { transform: translateX(0); }
+}
+
+4. Rotate Animation
+Anima a rotação de um elemento continuamente, criando um efeito de "girar".
+
+css
+Copiar código
+.rotate {
+    animation: rotate 2s infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+5. Keyframe Animation
+Usa múltiplas etapas para animar a cor de fundo de um elemento, criando um efeito de mudança de cor contínua.
+
+css
+Copiar código
+.keyframe-animation {
+    animation: colorChange 5s infinite;
+}
+
+@keyframes colorChange {
+    0% { background-color: #FF5733; }
+    25% { background-color: #33FF57; }
+    50% { background-color: #3357FF; }
+    75% { background-color: #FF33A1; }
+    100% { background-color: #FF5733; }
+}
+Cada exemplo no código HTML demonstra diferentes técnicas de animação usando CSS. Essas técnicas permitem criar efeitos visuais dinâmicos e interativos, melhorando a experiência do usuário em páginas web.
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio de Animações CSS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        section {
+            margin: 20px;
+        }
+        .container {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #fff;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            color: #fff;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            transition: transform 0.5s, background-color 0.5s, opacity 0.5s;
+        }
+        .box1 { background-color: #FF5733; }
+        .box2 { background-color: #33FF57; }
+        .box3 { background-color: #3357FF; }
+        .box:hover {
+            transform: scale(1.2);
+            background-color: #000;
+        }
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+        .slide-in {
+            transform: translateX(-100%);
+            animation: slideIn 2s forwards;
+        }
+        .rotate {
+            animation: rotate 2s infinite;
+        }
+        .keyframe-animation {
+            animation: colorChange 5s infinite;
+        }
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            to { transform: translateX(0); }
+        }
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        @keyframes colorChange {
+            0% { background-color: #FF5733; }
+            25% { background-color: #33FF57; }
+            50% { background-color: #3357FF; }
+            75% { background-color: #FF33A1; }
+            100% { background-color: #FF5733; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Conceitos de Animações CSS</h1>
+        <p>Exemplos demonstrando diferentes técnicas de animação usando CSS</p>
+    </header>
+
+    <section>
+        <h2>Hover Animation</h2>
+        <div class="container">
+            <div class="box box1">Hover me</div>
+            <div class="box box2">Hover me</div>
+            <div class="box box3">Hover me</div>
+        </div>
+        <p><strong>transition</strong> (animando propriedades CSS ao passar o mouse sobre o elemento)</p>
+    </section>
+
+    <section>
+        <h2>Fade-in Animation</h2>
+        <div class="container">
+            <div class="box box1 fade-in">Fade In</div>
+            <div class="box box2 fade-in">Fade In</div>
+            <div class="box box3 fade-in">Fade In</div>
+        </div>
+        <p><strong>animation: fadeIn 2s forwards;</strong> (animando a opacidade do elemento)</p>
+    </section>
+
+    <section>
+        <h2>Slide-in Animation</h2>
+        <div class="container">
+            <div class="box box1 slide-in">Slide In</div>
+            <div class="box box2 slide-in">Slide In</div>
+            <div class="box box3 slide-in">Slide In</div>
+        </div>
+        <p><strong>animation: slideIn 2s forwards;</strong> (animando a posição do elemento)</p>
+    </section>
+
+    <section>
+        <h2>Rotate Animation</h2>
+        <div class="container">
+            <div class="box box1 rotate">Rotate</div>
+            <div class="box box2 rotate">Rotate</div>
+            <div class="box box3 rotate">Rotate</div>
+        </div>
+        <p><strong>animation: rotate 2s infinite;</strong> (animando a rotação do elemento)</p>
+    </section>
+
+    <section>
+        <h2>Keyframe Animation</h2>
+        <div class="container">
+            <div class="box box1 keyframe-animation">Color Change</div>
+            <div class="box box2 keyframe-animation">Color Change</div>
+            <div class="box box3 keyframe-animation">Color Change</div>
+        </div>
+        <p><strong>animation: colorChange 5s infinite;</strong> (animando a cor de fundo do elemento em múltiplas etapas)</p>
+    </section>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!--
+
+Explicação do CSS Grid
+
+1. grid-template-columns
+Define as colunas da grade.
+
+repeat(3, 1fr): cria três colunas com tamanhos iguais.
+100px 1fr 2fr: cria três colunas com larguras de 100px, uma fração do espaço disponível, e duas frações do espaço disponível, respectivamente.
+
+2. grid-template-rows
+Define as linhas da grade.
+
+repeat(3, 100px): cria três linhas com altura de 100px cada.
+50px 1fr 2fr: cria três linhas com alturas de 50px, uma fração do espaço disponível, e duas frações do espaço disponível, respectivamente.
+
+3. grid-template-areas
+Define áreas nomeadas na grade, permitindo um layout mais intuitivo.
+
+Define áreas como 'header header header' 'sidebar main main' 'footer footer footer', criando uma estrutura onde o cabeçalho ocupa três colunas na primeira linha, a barra lateral ocupa a primeira coluna da segunda linha, o conteúdo principal ocupa as duas colunas restantes na segunda linha, e o rodapé ocupa todas as três colunas na última linha.
+
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio CSS Grid</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        section {
+            margin: 20px;
+        }
+        .container {
+            display: grid;
+            gap: 10px;
+            margin: 20px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        .box {
+            width: 100%;
+            height: 100px;
+            color: #fff;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        .box1 { background-color: #FF5733; }
+        .box2 { background-color: #33FF57; }
+        .box3 { background-color: #3357FF; }
+        .box4 { background-color: #FF33A1; }
+        .box5 { background-color: #33FFF5; }
+        .box6 { background-color: #F5FF33; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Conceitos de CSS Grid</h1>
+        <p>Exemplos demonstrando diferentes configurações usando CSS Grid</p>
+    </header>
+
+    <section>
+        <h2>Grid Template Columns</h2>
+        <div class="container" style="grid-template-columns: repeat(3, 1fr);">
+            <div class="box box1">1</div>
+            <div class="box box2">2</div>
+            <div class="box box3">3</div>
+        </div>
+        <p><strong>grid-template-columns: repeat(3, 1fr);</strong></p>
+
+        <div class="container" style="grid-template-columns: 100px 1fr 2fr;">
+            <div class="box box1">1</div>
+            <div class="box box2">2</div>
+            <div class="box box3">3</div>
+        </div>
+        <p><strong>grid-template-columns: 100px 1fr 2fr;</strong></p>
+    </section>
+
+    <section>
+        <h2>Grid Template Rows</h2>
+        <div class="container" style="grid-template-rows: repeat(3, 100px);">
+            <div class="box box1">1</div>
+            <div class="box box2">2</div>
+            <div class="box box3">3</div>
+        </div>
+        <p><strong>grid-template-rows: repeat(3, 100px);</strong></p>
+
+        <div class="container" style="grid-template-rows: 50px 1fr 2fr;">
+            <div class="box box1">1</div>
+            <div class="box box2">2</div>
+            <div class="box box3">3</div>
+        </div>
+        <p><strong>grid-template-rows: 50px 1fr 2fr;</strong></p>
+    </section>
+
+    <section>
+        <h2>Grid Areas</h2>
+        <div class="container" style="grid-template-areas: 
+                                        'header header header'
+                                        'sidebar main main'
+                                        'footer footer footer';
+                                     grid-template-columns: 1fr 2fr 1fr;
+                                     grid-template-rows: auto 1fr auto;">
+            <div class="box box1" style="grid-area: header;">Header</div>
+            <div class="box box2" style="grid-area: sidebar;">Sidebar</div>
+            <div class="box box3" style="grid-area: main;">Main</div>
+            <div class="box box4" style="grid-area: footer;">Footer</div>
+        </div>
+        <p><strong>grid-template-areas</strong></p>
+    </section>
+
+    <section>
+        <h2>Justify Items e Align Items</h2>
+        <div class="container" style="grid-template-columns: repeat(3, 1fr); height: 200px; justify-items: center;">
+            <div class="box box1">1</div>
+            <div class="box box2">2</div>
+            <div class="box box3">3</div>
+        </div>
+        <p><strong>justify-items: center;</strong></p>
+
+        <div class="container" style="grid-template-columns: repeat(3, 1fr); height: 200px; align-items: center;">
+            <div class="box box1">1</div>
+            <div class="box box2">2</div>
+            <div class="box box3">3</div>
+        </div>
+        <p><strong>align-items: center;</strong></p>
+    </section>
+</body>
+</html>
